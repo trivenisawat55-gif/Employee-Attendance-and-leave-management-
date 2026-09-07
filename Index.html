@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Attendance & Leave Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Employee Attendance & Leave Management</h1>
+    <p>Employee Management System</p>
+</header>
+
+<nav>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('employees')">Employees</button>
+    <button onclick="showSection('attendance')">Attendance</button>
+    <button onclick="showSection('leave')">Leave</button>
+    <button onclick="showSection('reports')">Reports</button>
+</nav>
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="section">
+
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p id="totalEmployees">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Present Today</h3>
+            <p id="presentToday">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Absent Today</h3>
+            <p id="absentToday">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending Leaves</h3>
+            <p id="pendingLeaves">0</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EMPLOYEE MANAGEMENT -->
+
+<section id="employees" class="section hidden">
+
+    <h2>Employee & Department Management</h2>
+
+    <div class="form">
+
+        <input type="text" id="empId" placeholder="Employee ID">
+
+        <input type="text" id="empName" placeholder="Employee Name">
+
+        <input type="text" id="empDept" placeholder="Department">
+
+        <input type="text" id="empRole" placeholder="Job Role">
+
+        <button onclick="addEmployee()">Add Employee</button>
+
+    </div>
+
+    <h3>Employee List</h3>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="employeeTable"></tbody>
+
+    </table>
+
+</section>
+
+
+<!-- ATTENDANCE -->
+
+<section id="attendance" class="section hidden">
+
+    <h2>Attendance Management</h2>
+
+    <label>Select Date:</label>
+
+    <input type="date" id="attendanceDate">
+
+    <br><br>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="attendanceTable"></tbody>
+
+    </table>
+
+</section>
+
+
+<!-- LEAVE -->
+
+<section id="leave" class="section hidden">
+
+    <h2>Leave Application & Approval</h2>
+
+    <div class="form">
+
+        <select id="leaveEmployee">
+            <option value="">Select Employee</option>
+        </select>
+
+        <select id="leaveType">
+
+            <option value="Casual Leave">
+                Casual Leave
+            </option>
+
+            <option value="Sick Leave">
+                Sick Leave
+            </option>
+
+            <option value="Emergency Leave">
+                Emergency Leave
+            </option>
+
+        </select>
+
+        <input type="date" id="leaveDate">
+
+        <button onclick="applyLeave()">
+            Apply Leave
+        </button>
+
+    </div>
+
+    <h3>Leave Requests</h3>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Employee</th>
+                <th>Leave Type</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="leaveTable"></tbody>
+
+    </table>
+
+</section>
+
+
+<!-- REPORTS -->
+
+<section id="reports" class="section hidden">
+
+    <h2>Attendance & Leave Reports</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Employees</h3>
+            <p id="reportEmployees">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Attendance Records</h3>
+            <p id="attendanceRecords">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Leave Requests</h3>
+            <p id="leaveRecords">0</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+  </html>
