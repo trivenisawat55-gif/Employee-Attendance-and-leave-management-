@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* HEADER */
+
+header {
+    background: #4f46e5;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    background: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+nav button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+nav button:hover {
+    background: #4f46e5;
+    border-radius: 5px;
+}
+
+
+/* SECTION */
+
+.section {
+    padding: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #555;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+
+/* FORM */
+
+.form {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 160px;
+}
+
+button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3730a3;
+}
+
+
+/* TABLE */
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+th {
+    background: #4f46e5;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+/* STATUS */
+
+.present {
+    color: green;
+    font-weight: bold;
+}
+
+.absent {
+    color: red;
+    font-weight: bold;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.approved {
+    color: green;
+    font-weight: bold;
+}
+
+.rejected {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    nav button {
+        display: block;
+        width: 100%;
+        margin: 3px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    .form button {
+        width: 100%;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}
